@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app1/Notifi.dart';
 import 'package:flutter_app1/Experience.dart';
-import 'package:flutter_app1/notification.dart';
 import 'package:flutter_app1/profil.dart';
 import 'package:flutter_app1/store.dart';
 import 'package:path/path.dart';
-
 import 'Settings.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
 void main() =>
@@ -24,9 +24,8 @@ class AminaId extends StatefulWidget {
 class _AminaIdState extends State<AminaId> {
   int _currentIndex = 0;
   final List _children =[
-
     Experience(),
-    notification(),
+    Notifi(),
     Store(),
     profil(),
   ];
@@ -38,21 +37,24 @@ class _AminaIdState extends State<AminaId> {
   }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return
+      Scaffold(
       backgroundColor: Colors.grey[800],
       appBar: AppBar(
         backgroundColor: Colors.grey[50],
-        elevation: 0.0,
+        elevation: 2.0,
         title: Center(
-          child: Text('Alien Dimension',
-            style: TextStyle(
-              color: Colors.black,
-            ),
-          ),
+          //child: Center(
+            child: Image(
+              image: AssetImage('assets/images/LOGO.png'),
+       // width: 30,
+        height: 20,
+      ),
+          //),
         ),
         actions: [
           IconButton(
-            icon:Icon(Icons.ac_unit),
+            icon:Icon(Icons.settings_ethernet),
             color: Colors.black,
             onPressed:() =>{
             Navigator.push(context,MaterialPageRoute(builder:(context)=> Settings() ) )
