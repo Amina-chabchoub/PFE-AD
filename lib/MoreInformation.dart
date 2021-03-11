@@ -16,8 +16,8 @@ class _MoreInformationState extends State<MoreInformation> {
         backgroundColor: Colors.grey[800],
         elevation: 2.0,
       ),
-      body:
-        Column(
+      body:SingleChildScrollView(
+          child: Column(
           children: [
             Container(
               margin: const EdgeInsets.fromLTRB(0, 15, 200, 0),
@@ -32,6 +32,7 @@ class _MoreInformationState extends State<MoreInformation> {
                ),
             SizedBox(height: 30),
             Container(
+
               //margin: EdgeInsets.all(3.0),
               //padding: EdgeInsets.all(1.0),
               alignment: Alignment.center,
@@ -44,13 +45,12 @@ class _MoreInformationState extends State<MoreInformation> {
               child: Text("Hello", style: TextStyle(fontSize: 10)),
             ),
             Container(
-              width: MediaQuery.of(context).size.width * 2.5,
+              margin: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+              //width: MediaQuery.of(context).size.width * 2.5,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                // mainAxisSize: MainAxisSize.max,
                 children: [
-
-
 
                   RaisedButton(
 
@@ -81,7 +81,7 @@ class _MoreInformationState extends State<MoreInformation> {
             )
           ],
         ),
-
+      )
     );
   }
 }

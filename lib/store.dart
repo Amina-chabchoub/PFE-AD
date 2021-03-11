@@ -1,8 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app1/MoreInformation.dart';
+import 'package:flutter_app1/Wishlist.dart';
 
 import 'About.dart';
 import 'Experience.dart';
+import 'Settings.dart';
 import 'helper/dialogHelper.dart';
 
 
@@ -21,7 +24,8 @@ class _StoreState extends State<Store> {
   @override
   Widget build(BuildContext context) {
     return   Scaffold(
-        body: GridView.count(
+        body:SingleChildScrollView(
+         child:  GridView.count(
           crossAxisCount: 1,
           children: List.generate(cours.length, (index) => Center(child:
           GridTile(
@@ -49,9 +53,6 @@ class _StoreState extends State<Store> {
                         textAlign: TextAlign.left,
                       ),
                     ),
-
-
-
                   Positioned(
                     top: 300,
                     left: 200,
@@ -84,8 +85,6 @@ class _StoreState extends State<Store> {
                       textAlign: TextAlign.left,
                     ),
                   ),
-
-
                   Positioned(
                     top: 270,
                     left: 10,
@@ -100,8 +99,6 @@ class _StoreState extends State<Store> {
                     ),
 
                     //),
-
-
                   Positioned(
                     top: 320,
                     left: 0,
@@ -109,8 +106,6 @@ class _StoreState extends State<Store> {
                     child: FlatButton(
                         onPressed: (){
                           Navigator.push(context, MaterialPageRoute(builder: (context) => MoreInformation()));
-
-
                         },
                         child : Text("More informations >",style: TextStyle(
                           color: Colors.white,
@@ -123,21 +118,46 @@ class _StoreState extends State<Store> {
                         )
                     ),
                   ),
+                  Positioned(
+                    top: -57,
+                    left: 185,
+                    //right: 150,
+                    //child : Transform.translate(offset:
+                    //Offset(50,-20)),
+                       child : Container(
+                         width: 30,
+                         height: 50,
+                         margin: EdgeInsets.all(60),
+                         //margin: EdgeInsets.symmetric(horizontal: 60,vertical: 55),
+                         decoration: BoxDecoration(
+                           borderRadius: BorderRadius.circular(5),
+                           color: Colors.white.withOpacity(0.7),
+                         ),
+                         child:
+                       IconButton(
+                       icon:Icon(Icons.bookmark_border,size: 25,),
+                        color: Colors.black,
+                        splashColor: Colors.red,
+                  //  alignment: Alignment.centerLeft,
+                   // tooltip: "Add to wishlist",
+                       onPressed:() =>{
+                        Navigator.push(context,MaterialPageRoute(builder:(context)=> Wishlist() ) )
+                      },
+                    ),
+                       ),
+                  ),
+
             ]
           )
           )
-
           ),
-        ))
-
+          )
+          )
                     ),
+        )
                   );
-
-
   }
 }
-
-
 class Cour{
   final String titile ;
   final String prix ;
@@ -146,9 +166,8 @@ class Cour{
   final String oldPrice ;
   const Cour({this.titile,this.prix,this.description,this.imglink,this.oldPrice});
 }
-
  List<Cour> cours = const<Cour>[
   const Cour(titile: 'Human Anatomy',prix: '67.6dt',description: 'fesf^f',imglink: 'assets/store/Thumb.png',oldPrice: '89.85dt'),
   const Cour(titile: 'Astronomy',prix: '89.9dt',description: 'fzkledz^f',imglink: 'assets/store/Rectangle.png',oldPrice: '119.9dt'),
+ ];
 
-];

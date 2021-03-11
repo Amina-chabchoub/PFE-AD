@@ -34,7 +34,7 @@ class ExitConfirmation extends StatelessWidget {
        children: [
          Center(
            child: AppBar(
-             backgroundColor: Colors.grey[800],
+             backgroundColor: Colors.grey[800].withOpacity(0.4),
              elevation: 2.0,
      ),
      ),
@@ -62,7 +62,6 @@ class ExitConfirmation extends StatelessWidget {
                                 letterSpacing: 1.0,
                                 fontWeight: FontWeight.bold,
                                    ),
-
                   )
                 ),
             ),
@@ -71,21 +70,17 @@ class ExitConfirmation extends StatelessWidget {
           alignment: Alignment.center,
           margin: const EdgeInsets.fromLTRB(105, 40, 0, 0),
           child: Row(
-
             mainAxisSize: MainAxisSize.max,
             children: [
               RaisedButton(
-                  color: Colors.green,
+                  color: Colors.green.withOpacity(0.5),
                   onPressed:(){},
                 child:
-
                 Text('Confirm',
                      style: TextStyle(
                       color: Colors.white,
                       ),
-
                  )),
-
             ],
           ),
         )
