@@ -4,8 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app1/Experience.dart';
 import 'package:flutter_app1/Wishlist.dart';
 import 'package:flutter_app1/helper/dialogHelper.dart';
+
 import 'package:flutter_app1/store.dart';
 
+import 'EditProfile.dart';
+import 'Reclamation.dart';
 class profil extends StatefulWidget {
   double kSpacing = 20;
   @override
@@ -68,7 +71,7 @@ class _profilState extends State<profil> {
                children: [
                  Container(
 
-                     margin: const EdgeInsets.fromLTRB(190, 270, 40, 0),
+                     margin: const EdgeInsets.fromLTRB(190, 200, 40, 0),
                      child: Row(
                        children: [
                          Align(
@@ -80,20 +83,7 @@ class _profilState extends State<profil> {
                              SizedBox(height: 30.0),
                              FlatButton(
                                  onPressed: (){
-                                   print('salut');
-                                 },
-
-                                 child : Text("  Edit Profile",
-                                     textAlign: TextAlign.left,
-                                     style: TextStyle(
-                                       fontSize: 14.0,
-                                     )
-                                 )
-                             ),
-                             FlatButton(
-                                 onPressed: (){
                                    Navigator.push(context, MaterialPageRoute(builder: (context) => Wishlist()));
-
                                  },
                                  child : Text("Wishlist",
 
@@ -112,14 +102,14 @@ class _profilState extends State<profil> {
 
                              FlatButton(
                                  onPressed: (){
-                                   print('salut');
+                                   Navigator.push(context, MaterialPageRoute(builder: (context) => DropDown()));
                                  },
                                  child : Text("  Reclamtion",
                                      textAlign: TextAlign.right,
                                      style: TextStyle(
                                        fontSize: 14.0,)
                                  )),
-                             SizedBox(height: 100.0),
+                             SizedBox(height : 80.0),
                              FlatButton(
                                  onPressed: (){
                                    print('salut');

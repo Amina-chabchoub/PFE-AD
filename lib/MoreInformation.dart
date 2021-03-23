@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app1/screens/login_screen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
@@ -13,8 +14,8 @@ class _MoreInformationState extends State<MoreInformation> {
     return Scaffold(
 
       appBar: AppBar(
-        backgroundColor: Colors.grey[800],
-        elevation: 2.0,
+        backgroundColor: Colors.blueAccent.withOpacity(0.1),
+        elevation: 1.0,
       ),
       body:SingleChildScrollView(
           child: Column(
@@ -30,7 +31,7 @@ class _MoreInformationState extends State<MoreInformation> {
                 ),
               ),
                ),
-            SizedBox(height: 30),
+            SizedBox(height: 20),
             Container(
 
               //margin: EdgeInsets.all(3.0),
@@ -42,7 +43,9 @@ class _MoreInformationState extends State<MoreInformation> {
                 border:
                 Border.all(),
               ),
-              child: Text("Hello", style: TextStyle(fontSize: 10)),
+              child:
+
+              Text("Hello", style: TextStyle(fontSize: 10)),
             ),
             Container(
               margin: const EdgeInsets.fromLTRB(0, 0, 0, 0),
@@ -51,31 +54,39 @@ class _MoreInformationState extends State<MoreInformation> {
                 mainAxisAlignment: MainAxisAlignment.center,
                // mainAxisSize: MainAxisSize.max,
                 children: [
-
-                  RaisedButton(
-
+                  SizedBox(height: 50),
+                  SizedBox(
+                    width: 110.0,
+                    height: 40.0,
+                    child: RaisedButton(
                       color: Colors.blue,
-                      onPressed:(){},
-                      child:
-
-                      Text('Order',
+                      child: Text('Order',
                         style: TextStyle(
                           color: Colors.white,
                         ),
-
-                      )
+                      ),
+                      onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen()));
+                      },
+                    ),
                   ),
-                RaisedButton(
-                      onPressed:(){},
+                  SizedBox(width: 5),
+                  SizedBox(
+                    width: 110.0,
+                    height: 40.0,
+
+                    child: RaisedButton(
                       color: Colors.grey[800],
-                      child:  Text('Demo',
+                      child: Text('Demo',
                         style: TextStyle(
                           color: Colors.white,
                         ),
+                      ),
+                      onPressed: (){
 
-                      )
+                      },
+                    ),
                   ),
-
                 ],
               ),
             )

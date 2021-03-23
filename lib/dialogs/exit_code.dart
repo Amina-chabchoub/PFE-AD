@@ -34,8 +34,7 @@ class ExitConfirmation extends StatelessWidget {
        children: [
          Center(
            child: AppBar(
-             backgroundColor: Colors.grey[800].withOpacity(0.4),
-             elevation: 2.0,
+             backgroundColor: Colors.blueAccent.withOpacity(0.1),
      ),
      ),
          Container(

@@ -6,6 +6,7 @@ import 'package:flutter_app1/Experience.dart';
 import 'package:flutter_app1/profil.dart';
 import 'package:flutter_app1/store.dart';
 import 'package:path/path.dart';
+import 'Cart.dart';
 import 'Settings.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -27,7 +28,9 @@ class _AminaIdState extends State<AminaId> {
     Experience(),
     Notifi(),
     Store(),
+    Cart(),
     profil(),
+
   ];
 
   void onTappedBar(int index){
@@ -39,27 +42,35 @@ class _AminaIdState extends State<AminaId> {
   Widget build(BuildContext context) {
     return
       Scaffold(
-      backgroundColor: Colors.grey[800],
+      backgroundColor: Colors.grey[800].withOpacity(0.5),
       appBar: AppBar(
-        backgroundColor: Colors.grey[50],
-        elevation: 2.0,
-        title: Center(
-          //child: Center(
-            child: Image(
-              image: AssetImage('assets/images/LOGO.png'),
+        backgroundColor: Colors.white,
+        elevation: 0.0,
+        title: Column(
+          children: [
+
+            Center(
+              //child: Center(
+                child: Image(
+                  image: AssetImage('assets/images/LOGO.png'),
        // width: 30,
-        height: 20,
+            height: 20,
       ),
-          //),
+              //),
+            ),
+
+          ],
         ),
         actions: [
           IconButton(
-            icon:Icon(Icons.settings_ethernet),
+            icon:Icon(Icons.settings_applications),
             color: Colors.black,
             onPressed:() =>{
-            Navigator.push(context,MaterialPageRoute(builder:(context)=> Settings() ) )
+              Navigator.push(context,MaterialPageRoute(builder:(context)=> Settings() ) )
             },
           ),
+
+
         ],
       ),
 
@@ -89,10 +100,16 @@ class _AminaIdState extends State<AminaId> {
             backgroundColor: Colors.grey[600],
           ),
           BottomNavigationBarItem(
+            icon: Icon(Icons.shopping_cart_outlined),
+            title: Text('Carte'),
+            backgroundColor: Colors.grey[600],
+          ),
+          BottomNavigationBarItem(
             icon: Icon(Icons.person_rounded),
             title: Text('Profil'),
             backgroundColor: Colors.grey[600],
           ),
+
         ],
 
         onTap:(index)   {

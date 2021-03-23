@@ -21,12 +21,14 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+
   flutter:
     sdk: flutter
   line_awesome_flutter: ^1.0.1
   flutter_screenutil: ^4.0.3+1
   animated_theme_switcher: ^1.0.5
   fluttertoast: ^3.1.0
+  image_picker: ^0.6.6+5
 
 
 
@@ -74,7 +76,5 @@ flutter:
         - asset: assets\fonts\ShipporiMinchoB1-Regular.ttf
         - asset: assets\fonts\ShipporiMinchoB1-Medium.ttf
         - asset: assets\fonts\ShipporiMinchoB1-ExtraBold.ttf
-
-
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

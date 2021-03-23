@@ -46,7 +46,7 @@ class _SettingsState extends State<Settings> {
     //),
         //),
       appBar: AppBar(
-        backgroundColor: Colors.grey[800],
+        backgroundColor: Colors.blueAccent.withOpacity(0.1),
       ),
 
         body:SingleChildScrollView(
